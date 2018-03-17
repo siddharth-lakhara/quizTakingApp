@@ -8,11 +8,11 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      username: {
-        type: Sequelize.STRING
+      questionid: {
+        type: Sequelize.INTEGER
       },
-      responses: {
-        type: Sequelize.TEXT
+      answer: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
