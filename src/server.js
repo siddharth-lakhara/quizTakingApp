@@ -9,9 +9,13 @@ server.connection({
 
 server.route(Routes);
 
-server.start((err) => {
-  if (err) {
-    console.log(err);
-  }
-  console.log('server started at: ', server.info.uri);
-});
+if (!module.parent) {
+  server.start((err) => {
+    if (err) {
+      console.log(err);
+    }
+    console.log('server started at: ', server.info.uri);
+  });
+}
+
+module.exports = server;
