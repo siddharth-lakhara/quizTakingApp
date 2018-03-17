@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/server.js",
+    "test": "NODE_ENV=test sequelize db:migrate:undo:all && NODE_ENV=test sequelize db:migrate && jest tests/",
+    "migrate": "sequelize db:migrate:undo:all && sequelize db:migrate"
   },
   "author": "",
   "license": "ISC",
