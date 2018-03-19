@@ -20,7 +20,13 @@ module.exports = [{
   method: 'POST',
   path: '/responses',
   handler: (req, reply) => {
-    reply('here');
+    const { username, questionid, answer } = req.payload.response;
+    Models.responses.findOne({ where: { username } }).then((userResponse) => {
+      const oldResponse = userResponse.response;
+      oldResponse[questionid] = answer;
+      Models.responses.update({ response: oldResponse }, { where: { username } })
+        .then(() => { reply(); });
+    });
   },
 
 }];
