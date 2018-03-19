@@ -48,19 +48,26 @@ describe('Get all questions', () => {
     ],
   };
 
-  //   test('replies all questions', (done) => {
-  //     const url = 'https://5gj1qvkc5h.execute-api.us-east-1.amazonaws.com/dev/allQuestions';
-  //     getAllQuestions(url).then((res) => {
-  //       console.log(res);
-  //       expect(res).toEqual(verifyJSON);
-  //       done();
-  //     });
-  //   });
+  test('replies all questions', (done) => {
+    const url = 'https://5gj1qvkc5h.execute-api.us-east-1.amazonaws.com/dev/allQuestions';
+    getAllQuestions(url).then((res) => {
+      expect(res).toEqual(verifyJSON);
+      done();
+    }).catch((err) => {
+      console.log('Error: ', err);
+    });
+  });
 
-//   test('associated route gives 200', (done) => {
-//     server.inject('/dev/questions', (res) => {
-//       expect(res.statusCode).toBe(200);
-//       done();
-//     });
-//   });
+  test('associated route gives 200', (done) => {
+    server.inject('/dev/questions', (res) => {
+      expect(res.statusCode).toBe(200);
+      done();
+    });
+  });
 });
+
+// describe('Get all answers', () => {
+//   test();
+
+//   test();
+// });

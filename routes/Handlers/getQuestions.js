@@ -1,7 +1,7 @@
 // gets questions from the server
 
-const axios = require('axios');
+const rp = require('request-promise');
 
-const getQuestions = url => axios(url).then(res => (res.data));
+const getQuestions = url => rp(url).then(res => (JSON.parse(res)));
 
 module.exports = getQuestions;
