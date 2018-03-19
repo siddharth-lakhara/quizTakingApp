@@ -27,6 +27,10 @@ module.exports = [{
             { username: userName, score: 0 },
             { where: { username: userName } },
           ).then(() => {
+            Models.responses.create({
+              username: userName,
+              answers: JSON.stringify({}),
+            });
           });
         }
         reply({ message: 'Done' });
