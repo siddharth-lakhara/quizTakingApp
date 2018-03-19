@@ -1,7 +1,7 @@
 
 const responseCombiner = require('./Handlers/responseCombiner');
 const updateDBHandler = require('./Handlers/updateDBHandler');
-const updateDBSwagger = require('../swaggerSpecs/updateDBSwagger');
+const updateDBSwagger = require('../swaggerSpecs/updateDB');
 
 module.exports = [{
   method: 'GET',
