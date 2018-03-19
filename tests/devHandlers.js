@@ -1,6 +1,6 @@
 const server = require('../src/server');
 const getAllQuestions = require('../routes/Handlers/getQuestions');
-
+const getAnswers = require('../routes/Handlers/getAnswers');
 
 describe('Get all questions', () => {
   const verifyJSON = {
@@ -66,8 +66,23 @@ describe('Get all questions', () => {
   });
 });
 
-// describe('Get all answers', () => {
-//   test();
+describe('Get all answers', () => {
+  const verifyJSON = {
+    answer: 'New Delhi',
+  };
 
-//   test();
-// });
+  test('correct answer for question id 12', (done) => {
+    const url = 'https://5gj1qvkc5h.execute-api.us-east-1.amazonaws.com/dev/findAnswerById/12';
+    getAnswers(url).then((res) => {
+      expect(res).toEqual(verifyJSON);
+      done();
+    });
+  });
+
+  test('associated route give 200 response', (done) => {
+    server.inject('/dev/answers/12', (res) => {
+      expect(res.statusCode).toBe(200);
+      done();
+    });
+  });
+});
