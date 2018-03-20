@@ -24,6 +24,6 @@ Third Screen- Leaderboard
 
         ***
 
-The design which I aimed for can be found in sketches folder
+The design which I aimed for can be found in images folder
 Expected server responses can be found in ServerResponses folder
-If my servers are not running you can create your own AWS lambda functions, from labdaFunction files
+If my servers are not running you can create your own AWS lambda functions, from lambdaFunction files
