@@ -12,7 +12,7 @@ module.exports = [{
       where: { username },
       attributes: ['username', 'answers'],
     }).then((searchResults) => {
-      reply(searchResults.datavalues);
+      reply(searchResults.dataValues.answers);
     });
   },
 
@@ -20,11 +20,12 @@ module.exports = [{
   method: 'POST',
   path: '/responses',
   handler: (req, reply) => {
-    const { username, questionid, answer } = req.payload.response;
+    const { username, questionid, answer } = JSON.parse(req.payload.response);
     Models.responses.findOne({ where: { username } }).then((userResponse) => {
-      const oldResponse = userResponse.response;
+      const oldResponse = JSON.parse(userResponse.answers);
       oldResponse[questionid] = answer;
-      Models.responses.update({ response: oldResponse }, { where: { username } })
+      const newResponse = JSON.stringify(oldResponse);
+      Models.responses.update({ answers: newResponse }, { where: { username } })
         .then(() => { reply(); });
     });
   },
