@@ -22,8 +22,9 @@ module.exports = [{
             return query.dataValues;
           });
           reply(returnObject);
+        } else {
+          reply({ data: '0' }); // database is empty
         }
-        reply({ data: '0' }); // database is empty
       });
   },
 }];
