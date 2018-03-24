@@ -8,9 +8,10 @@ const login = require('./login');
 const fetch = require('./fetch');
 const responses = require('./responses');
 const calc = require('./calc');
+const leaders = require('./leaders');
 
 module.exports = [].concat(
   ping, devQuestions, devAnswers,
   devCombine, updateDB, login, fetch,
-  responses, calc,
+  responses, calc, leaders,
 );
