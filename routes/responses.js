@@ -49,18 +49,18 @@ module.exports = [{
     plugins: {
       'hapi-swagger': responsesSwagger.POST,
     },
-    validate: {
-      payload: {
-        response: Joi.object().keys({
-          username: Joi.string().regex(/^[a-zA-Z0-9]+$/).example('siddharth'),
-          questionid: Joi.number().example(12),
-          answer: Joi.string().example('New Delhi'),
-        }),
-      },
-    },
+    // validate: {
+    //   body: {
+    //     response: Joi.object().keys({
+    //       username: Joi.string().regex(/^[a-zA-Z0-9]+$/).example('siddharth'),
+    //       questionid: Joi.number().example(12),
+    //       answer: Joi.string().example('New Delhi'),
+    //     }),
+    //   },
+    // },
   },
   handler: (req, reply) => {
-    const { username, questionid, answer } = JSON.parse(req.payload.response);
+    const { username, questionid, answer } = JSON.parse(req.payload);
     Models.responses.findOne({ where: { username } }).then((userResponse) => {
       if (userResponse !== undefined) {
         const oldResponse = JSON.parse(userResponse.answers);
