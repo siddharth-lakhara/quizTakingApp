@@ -6,6 +6,9 @@ Quizzy is a quiz taking app built on hapi JS with postgreSQL
 Quizzy is quiz taking app which fetches the questions from database and send it to user.
 If questions are not available in Database, it automatically populates DB from Question Bank Server. More details on server and its responses can be found in docs folder
 
+To access API documentations, start the server by script: npm start
+got to documentations link: localhost:8080/documentation
+
 ## Objective
 Create an application for taking a Quiz in both React and React Native
 
