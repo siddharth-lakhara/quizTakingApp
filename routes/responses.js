@@ -67,7 +67,7 @@ module.exports = [{
         oldResponse[questionid] = answer;
         const newResponse = JSON.stringify(oldResponse);
         Models.responses.update({ answers: newResponse }, { where: { username } })
-          .then(() => { reply(); });
+          .then(() => { reply({ message: 'done' }); });
       } else {
         reply({ statusCode: 404, message: 'Username not found' });
       }
