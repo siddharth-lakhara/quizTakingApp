@@ -3,7 +3,7 @@ const Joi = require('joi');
 const fetchSwagger = {
   responses: {
     200: {
-      description: 'success, may return {data: 0} if DB is empty',
+      description: 'success',
       schema:
         Joi.array().items(Joi.object().keys({
           questionid: Joi.number(),
