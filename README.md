@@ -1,8 +1,15 @@
+## Links
+Backend: https://github.com/siddharth-lakhara/quizTakingApp
+
+React App (Web): https://github.com/siddharth-lakhara/quizTakingApp-web
+
+React Native (iOS and android): https://github.com/siddharth-lakhara/quizTakingApp-mobile
+
+
 # quizTakingApp
 Quizzy is a quiz taking app built on hapi JS with postgreSQL
 
 ## Functionality
-
 Quizzy is quiz taking app which fetches the questions from database and send it to user.
 If questions are not available in Database, it automatically populates DB from Question Bank Server. More details on server and its responses can be found in docs folder
 
