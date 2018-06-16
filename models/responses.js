@@ -5,8 +5,5 @@ module.exports = (sequelize, DataTypes) => {
     username: DataTypes.STRING,
     answers: DataTypes.TEXT,
   }, {});
-  responses.associate = function (models) {
-    // associations can be defined here
-  };
   return responses;
 };
