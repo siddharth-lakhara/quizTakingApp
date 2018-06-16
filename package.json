@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/server.js",
-    "test": "NODE_ENV=test sequelize db:migrate:undo:all && NODE_ENV=test sequelize db:migrate && jest tests/",
+    "test": "NODE_ENV=test sequelize db:migrate:undo:all && NODE_ENV=test sequelize db:migrate && ./node_modules/.bin/jest tests/ --coverage",
     "migrate": "sequelize db:migrate:undo:all && sequelize db:migrate"
   },
   "author": "",
